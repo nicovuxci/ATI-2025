@@ -7,7 +7,9 @@
             border-top-left-radius: 20px;
 }
 
+
        .pictureBox{
+        
             display: flex;
             align-items: stretch; 
             width: 800px;          
@@ -17,7 +19,7 @@
 }
         .foto {
             height: auto;
-            width: 160px;
+            width: 180px;
             object-fit: cover;
             border-top-left-radius: 50px;
             margin: 2px;
@@ -29,9 +31,9 @@
         .perfil {
             flex-grow:1;
             border: 2px solid #555454;
-            box-shadow: 6px 6px 0px #999;
+            box-shadow: 4px 4px 0px #999;
             padding: 20px;
-            width: 600px;
+            width: 900px;
             margin: 20px 0;
             background-color: #f9f9f9;
        
@@ -57,8 +59,10 @@
         }
 
         .correo {
+          
             color: orange;
-            text-decoration: none;
+            font-family: 'Georgia', serif;
+            
         }
 
         .correo:active {
@@ -76,6 +80,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
+            
         }
 
         .info td {
@@ -84,80 +89,171 @@
 
         }
 
+        .info td {
+            font-family: 'Georgia', serif;
+        }
+
+        .perfil p:last-of-type {
+            
+            font-family: 'Georgia', serif;
+
+      }
+
+
         /*perfil arriba*/
 
         /*index abajo*/
 
+body {
+  font-family: open, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
 
-        body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
+header {
+  background-color: #9eb9df;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+ 
+ 
+}
 
-    header, footer {
-        padding: 15px;
-        border-bottom: 2px solid #ccc;
-    }
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-    section {
-        padding: 20px;
-        border-top: 2px solid #ccc;
-        border-bottom: 2px solid #ccc;
-    }
+nav li {
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border-right: 1px solid white;
+}
 
-    nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-    }
+nav li:nth-child(2) {
+  font-size: 1.0em;
+  color: white;
+  text-align: center;
+  flex: 1;
+}
 
-    nav li {
-        display: inline-block;
-        margin-right: 20px;
-    }
 
-    .ucv {
-        font-size: 0.8em;
-    }
+nav li:last-child {
+  border-right: none;
+}
 
-    form input[type="text"] {
-        padding: 5px;
-        font-size: 1em;
-    }
+.ucv {
+  font-size: 0.8em;
+}
 
-    form input[type="submit"] {
-        padding: 5px 10px;
-        font-size: 1em;
-        border: none;
-        cursor: pointer;
-    }
+nav form {
+  display: flex;
+  gap: 10px;
+}
 
-    .estudiantes ul {
-        list-style: none;
-        padding: 0;
-    }
+nav input[type="text"]:focus,
+nav input[type="submit"]:focus {
+  outline: none;
+}
 
-    .estudiantes li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-        padding: 10px;
-        border-radius: 8px;
-    }
 
-    .estudiantes img {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        margin-right: 15px;
-    }
+nav input[type="text"],
+nav input[type="submit"] {
+  padding: 8px 12px;
+  border: none;
+  font-size: 0.9em;
+}
 
-    footer {
-        text-align: center;
-        font-size: 0.9em;
-        padding: 10px;
-    }
+nav input[type="text"] {
+  background-color: white;
+ 
+}
+
+nav input[type="submit"] {
+  background-color: white;
+  color: #9eb9df;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contenedor {
+  max-width: 900px;
+  margin: 30px auto;
+  background-color: white;
+  
+}
+
+section.estudiantes {
+  padding: 20px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
+.estudiantes ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+}
+
+.estudiantes li {
+  background-color: #f2f2f2;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+  border: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.estudiantes li:hover {
+  background-color: #bce3f5;
+  transform: scale(1.15) translateX(5px) rotate(1deg);
+}
+
+.estudiantes img {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  border: none;
+  background-color: transparent;
+  border-radius: 0 !important;
+}
+
+.estudiantes span {
+  font-size: 0.85em;
+  font-weight: bold;
+  color: #8faeda;
+}
+
+.titulo-ati {
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.ucv {
+  margin-right: 2px;
+  font-size: 0.7em;
+  margin-left: 2px;
+}
+
+footer {
+  background-color: #9eb9df;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 0.9em;
+  padding: 10px;
+}
