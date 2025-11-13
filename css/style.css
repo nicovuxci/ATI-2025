@@ -40,14 +40,16 @@
             
         }
 
-        .perfil h1 {
-            font-family: 'Arial', 'sans-serif';
+
+        #nombre-usuario {
+  font-family: 'Arial', 'sans-serif';
             text-indent: 10px;
             color: orange;
             font-size: 2em;
             font-style: normal;
-        }
+}
 
+        
         .perfil p {
             text-indent: 10px;
             margin-bottom: 20px;
