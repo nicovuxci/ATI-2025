@@ -36,18 +36,21 @@
             width: 900px;
             margin: 20px 0;
             background-color: #f9f9f9;
+            display: grid;
+            grid-template-rows: auto auto 1fr auto;
+            gap: 5px;
        
             
         }
 
 
         #nombre-usuario {
-  font-family: 'Arial', 'sans-serif';
+            font-family: 'Arial', 'sans-serif';
             text-indent: 10px;
             color: orange;
             font-size: 2em;
             font-style: normal;
-}
+       }
 
         
         .perfil p {
