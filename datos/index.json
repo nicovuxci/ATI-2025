@@ -1,4 +1,10 @@
 const perfiles = [
+
+    {
+        "id": "30444890",
+        "imagen": "30444890\/30444890Grande.jpg",
+        "nombre": "Nicole Llerena"
+    }
     {
         "ci": "19371273",
         "imagen": "19371273\/19371273.jpg",
