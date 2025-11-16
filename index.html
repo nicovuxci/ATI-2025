@@ -1,94 +1,38 @@
 <!DOCTYPE html>
+<html lang="es-ES">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    
     <title>ATI[UCV] 2025-2</title>
-
     <link rel="icon" href="favicon.ico">
-
-    
     <link rel="stylesheet" href="css/style.css">
 
-
+    <script type="text/javascript" src="conf/configES.json" defer></script>
+    <script type="text/javascript" src="js/index.js" defer></script>
 </head>
 
 <body>
-
 <div class="contenedor">
 
 <header>
     <nav>
         <ul>
             <li><span class="titulo-ati">ATI<span class="ucv">[UCV]</span> 2025-2</span></li>
-
             <li>Hola, Nicole</li>
             <li>
                 <form>
-                    <input type="text" placeholder="Nombre...">
-                    <input type="submit" value="Buscar">
+                    <input type="text" id="buscador" placeholder="">
+                    <input type="submit" id="boton-buscar" value="">
+
                 </form>
             </li>
         </ul>
     </nav>
 </header>
 
-
-
 <section class="estudiantes">
-    <ul>
-        <li>
-
-            <div class="foto-nicole"></div>
-
-
-            <span>Nicole Llerena</span>
-        </li>
-        <li>
-            <div class="foto-dummy1"></div>
-            <span> Nina Martínez</span>
-        </li>
-        <li>
-            <div class="foto-dummy2"></div>
-            <span>Celia Goméz</span>
-        </li>
-        <li>
-            <div class="foto-dummy3"></div>
-            <span>Samara Thompson</span>
-        </li>
-        <li>
-            <div class="foto-dummy4"></div>
-            <span>Derek Miller</span>
-        </li>
-        <li>
-            <div class="foto-dummy5"></div>
-            <span>Elián Castro</span>
-        </li>
-        <li>
-            <div class="foto-dummy6"></div>
-            <span>Carlos Sorrento</span>
-        </li>
-         <li>
-            <div class="foto-dummy6"></div>
-            <span>Maddi Alvarez</span>
-        </li>
-        <li>
-            <div class="foto-dummy2"></div>
-            <span>Amber Flores</span>
-        </li>
-         <li>
-            <div class="foto-dummy6"></div>
-            <span>Erik Nuñez</span>
-        </li>
-        <li>
-            <div class="foto-dummy5"></div>
-            <span>Tom Perez </span>
-        </li>
-        <li>
-            <div class="foto-dummy3"></div>
-            <span>Jessica Liu</span>
-        </li>
-    </ul>
+    <!-- Contenedor vacío para que JS inserte la lista -->
+    <ul id="lista-estudiantes"></ul>
 </section>
 
 <footer>
@@ -96,6 +40,5 @@
 </footer>
 
 </div>
-
-    </body>
-    </html>
+</body>
+</html>
