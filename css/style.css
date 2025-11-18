@@ -278,7 +278,7 @@ footer {
   background-size: cover;
   background-position: center;
   display: block;
-  background-image: url("../30444890/30444890Grande.jpg");
+  /* background-image: url("../30444890/30444890Grande.jpg"); */
 }
 
 
@@ -286,7 +286,7 @@ footer {
 @media (max-width: 480px) {
 
 #foto-perfil {
-    background-image: url("../30444890/30444890Pequena.jpg");
+    /* background-image: url("../30444890/30444890Pequena.jpg"); */
     width: 150px;
     height: 180px;
     margin: 10px auto;
@@ -321,7 +321,7 @@ footer {
 @media (min-width: 481px) and (max-width: 768px) {
 
    #foto-perfil {
-    background-image: url("../30444890/30444890Pequena.jpg");
+    /* background-image: url("../30444890/30444890Pequena.jpg"); */
     width: 220px;
     height: 260px;
     margin: 15px auto;
@@ -355,7 +355,7 @@ footer {
 
 
 #foto-perfil {
-    background-image: url("../30444890/30444890Grande.jpg");
+    /* background-image: url("../30444890/30444890Grande.jpg"); */
     width: 320px;
     height: 400px;
     margin: 20px auto;
@@ -389,7 +389,7 @@ footer {
 @media (min-width: 1025px) and (max-width: 1200px) {
 
 #foto-perfil {
-    background-image: url("../30444890/30444890Grande.jpg");
+    /* background-image: url("../30444890/30444890Grande.jpg"); */
     width: 400px;
     height: 480px;
     margin: 20px auto;
@@ -420,7 +420,7 @@ footer {
 .foto-nicole {
   width: 100px;
   height: 100px;
-  background-image: url("../30444890/30444890Grande.jpg");
+  /* background-image: url("../30444890/30444890Grande.jpg"); */
   background-size: cover;
   background-position: center;
 
@@ -431,7 +431,7 @@ footer {
 
 @media (max-width: 480px) {
   .foto-nicole {
-    background-image: url("../30444890/30444890Pequena.jpg");
+    /* background-image: url("../30444890/30444890Pequena.jpg"); */
     width: 60px;
     height: 60px;
   }
@@ -440,7 +440,7 @@ footer {
 
 @media (min-width: 481px) and (max-width: 768px) {
   .foto-nicole {
-    background-image: url("../30444890/30444890Pequena.jpg");
+    /* background-image: url("../30444890/30444890Pequena.jpg"); */
     width: 80px;
     height: 80px;
   }
@@ -449,7 +449,7 @@ footer {
 
 @media (min-width: 769px) {
   .foto-nicole {
-    background-image: url("../30444890/30444890Grande.jpg");
+    /* background-image: url("../30444890/30444890Grande.jpg"); */
     width: 100px;
     height: 100px;
   }
@@ -513,3 +513,47 @@ footer {
   .foto-dummy10 { background-image: url("../dummy5Pequena.jpg"); width: 60px; height: 60px; }
   .foto-dummy11 { background-image: url("../dummy3Pequena.jpg"); width: 60px; height: 60px; }
 }
+
+#email-link {
+  color: orange;
+  text-decoration: none;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+#email-link:active {
+  color: red;
+}
+
+.estudiantes li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.estudiantes li a span {
+  margin-top: 10px;
+  display: block;
+}
+
+#foto-perfil {
+  width: 400px;
+  height: 480px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#foto-perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50px 0 0 0; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+
