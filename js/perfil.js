@@ -1,7 +1,7 @@
 window.onload = function () {
   const params = new URLSearchParams(window.location.search);
   const ci = params.get("ci");
-  const language = params.get("lang") || "ES";
+  const language = params.get("lang");
 
   const configScript = document.createElement("script");
   configScript.src = `conf/config${language}.json`;
