@@ -12,6 +12,8 @@ window.onload = function () {
   configScript.onload = function () {
     const buscador = document.getElementById("buscador");
     const botonBuscar = document.getElementById("botonBuscar");
+    const lista = document.getElementById("lista-estudiantes");
+
     if (buscador && botonBuscar) {
       buscador.placeholder = config.nombre;
       botonBuscar.value = config.buscar;
@@ -24,35 +26,58 @@ window.onload = function () {
 
     const tituloAti = document.getElementById("titulo-ati");
     if (tituloAti && config.sitio) {
-    tituloAti.innerHTML = `${config.sitio[0]}<span class="ucv">${config.sitio[1]}</span> ${config.sitio[2]}`;
+      tituloAti.innerHTML = `${config.sitio[0]}<span class="ucv">${config.sitio[1]}</span> ${config.sitio[2]}`;
     }
 
     const footer = document.querySelector("footer");
     if (footer) {
       footer.textContent = config.copyRight;
     }
-  };
-  document.body.appendChild(configScript);
 
-  if (typeof perfiles !== "undefined") {
-    const lista = document.getElementById("lista-estudiantes");
-    perfiles.forEach(perfil => {
-      const li = document.createElement("li");
+    function mostrarEstudiantes(filtro) {
+      lista.innerHTML = "";
 
-      const enlace = document.createElement("a");
-      enlace.href = `perfil.html?ci=${perfil.ci}&lang=${language}`;
+      const resultados = perfiles.filter(perfil =>
+        perfil.nombre.toLowerCase().includes(filtro.toLowerCase())
+      );
 
-      const img = document.createElement("img");
-      img.src = perfil.imagen;
-      img.alt = perfil.nombre;
+      if (resultados.length === 0) {
+ lista.innerHTML = "";
+const mensaje = document.createElement("h2");
+mensaje.className = "mensaje-no-resultados";
+mensaje.textContent = `${config.mensaje_no_resultados}${filtro}`;
+lista.appendChild(mensaje);
 
-      const nombre = document.createElement("span");
-      nombre.textContent = perfil.nombre;
+} else {
+        resultados.forEach(perfil => {
+          const li = document.createElement("li");
 
-      enlace.appendChild(img);
-      enlace.appendChild(nombre);
-      li.appendChild(enlace);
-      lista.appendChild(li);
+          const enlace = document.createElement("a");
+          enlace.href = `perfil.html?ci=${perfil.ci}&lang=${language}`;
+
+          const img = document.createElement("img");
+          img.src = perfil.imagen;
+          img.alt = perfil.nombre;
+
+          const nombre = document.createElement("span");
+          nombre.textContent = perfil.nombre;
+
+          enlace.appendChild(img);
+          enlace.appendChild(nombre);
+          li.appendChild(enlace);
+          lista.appendChild(li);
+        });
+      }
+    }
+
+    mostrarEstudiantes("");
+
+    botonBuscar.addEventListener("click", function (e) {
+      e.preventDefault();
+      const filtro = buscador.value.trim();
+      mostrarEstudiantes(filtro);
     });
-  }
+  };
+
+  document.body.appendChild(configScript);
 };

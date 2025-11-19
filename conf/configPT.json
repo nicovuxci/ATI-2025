@@ -14,5 +14,7 @@ const config = {
     "fecha_nacimiento": "Data de nascimento",
 	"correo":"Se precisar me contatar pode me escrever em [email]",
 	"buscar": "Procurar",
+	"mensaje_no_resultados": "Não há alunos com o nome: ",
+	"perfil_no_encontrado": "Perfil não disponível. Faltam informações no link.",
 	"saludo": "Olá"
 }

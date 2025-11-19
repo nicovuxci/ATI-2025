@@ -3,6 +3,11 @@ window.onload = function () {
   const ci = params.get("ci");
   const language = params.get("lang");
 
+  if (!ci || !lang) {
+  document.body.innerHTML = "<h2 class='mensaje-no-resultados'>Perfil no disponible. Falta información en el enlace.</h2>";
+  throw new Error("Faltan parámetros en el URL");
+}
+
   const configScript = document.createElement("script");
   configScript.src = `conf/config${language}.json`;
   configScript.onload = function () {

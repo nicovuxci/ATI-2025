@@ -13,6 +13,8 @@
   "genero": "Sexo",
   "fecha_nacimiento": "Fecha de nacimiento",
   "correo": "Si necesitan comunicarse conmigo me pueden escribir a [email]",
+  "mensaje_no_resultados": "No hay alumnos que tengan en su nombre: ",
+  "perfil_no_encontrado": "Perfil no disponible. Falta información en el enlace.",
   "buscar": "Buscar",
   "saludo": "Hola"
 };

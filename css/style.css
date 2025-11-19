@@ -190,6 +190,7 @@ nav input[type="submit"] {
   margin: 30px auto;
   background-color: white;
   
+  
 }
 
 section.estudiantes {
@@ -469,50 +470,7 @@ footer {
   margin-bottom: 10px;
 }
 
-/* bigbig */
-@media (min-width: 769px) {
-  .foto-dummy1 { background-image: url("../dummy1Grande.jpg"); }
-  .foto-dummy2 { background-image: url("../dummy2Grande.jpg"); }
-  .foto-dummy3 { background-image: url("../dummy3Grande.jpg"); }
-  .foto-dummy4 { background-image: url("../dummy4Grande.jpg"); }
-  .foto-dummy5 { background-image: url("../dummy5Grande.jpg"); }
-  .foto-dummy6 { background-image: url("../dummy6Grande.jpg"); }
-  .foto-dummy7 { background-image: url("../dummy1Grande.jpg"); }
-  .foto-dummy8 { background-image: url("../dummy2Grande.jpg"); }
-  .foto-dummy9 { background-image: url("../dummy6Grande.jpg"); }
-  .foto-dummy10 { background-image: url("../dummy5Grande.jpg"); }
-  .foto-dummy11 { background-image: url("../dummy3Grande.jpg"); }
-}
 
-/* midbig */
-@media (min-width: 481px) and (max-width: 768px) {
-  .foto-dummy1 { background-image: url("../dummy1Pequena.jpg"); width: 80px; height: 80px; }
-  .foto-dummy2 { background-image: url("../dummy2Pequena.jpg"); width: 80px; height: 80px; }
-  .foto-dummy3 { background-image: url("../dummy3Pequena.jpg"); width: 80px; height: 80px; }
-  .foto-dummy4 { background-image: url("../dummy4Pequena.jpg"); width: 80px; height: 80px; }
-  .foto-dummy5 { background-image: url("../dummy5Pequena.jpg"); width: 80px; height: 80px; }
-  .foto-dummy6 { background-image: url("../dummy6Pequena.jpg"); width: 80px; height: 80px; }
-  .foto-dummy7 { background-image: url("../dummy1Pequena.jpg"); width: 80px; height: 80px; }
-  .foto-dummy8 { background-image: url("../dummy2Pequena.jpg"); width: 80px; height: 80px; }
-  .foto-dummy9 { background-image: url("../dummy6Pequena.jpg"); width: 80px; height: 80px; }
-  .foto-dummy10 { background-image: url("../dummy5Pequena.jpg"); width: 80px; height: 80px; }
-  .foto-dummy11 { background-image: url("../dummy3Pequena.jpg"); width: 80px; height: 80px; }
-}
-
-/* smoll */
-@media (max-width: 480px) {
-  .foto-dummy1 { background-image: url("../dummy1Pequena.jpg"); width: 60px; height: 60px; }
-  .foto-dummy2 { background-image: url("../dummy2Pequena.jpg"); width: 60px; height: 60px; }
-  .foto-dummy3 { background-image: url("../dummy3Pequena.jpg"); width: 60px; height: 60px; }
-  .foto-dummy4 { background-image: url("../dummy4Pequena.jpg"); width: 60px; height: 60px; }
-  .foto-dummy5 { background-image: url("../dummy5Pequena.jpg"); width: 60px; height: 60px; }
-  .foto-dummy6 { background-image: url("../dummy6Pequena.jpg"); width: 60px; height: 60px; }
-  .foto-dummy7 { background-image: url("../dummy1Pequena.jpg"); width: 60px; height: 60px; }
-  .foto-dummy8 { background-image: url("../dummy2Pequena.jpg"); width: 60px; height: 60px; }
-  .foto-dummy9 { background-image: url("../dummy6Pequena.jpg"); width: 60px; height: 60px; }
-  .foto-dummy10 { background-image: url("../dummy5Pequena.jpg"); width: 60px; height: 60px; }
-  .foto-dummy11 { background-image: url("../dummy3Pequena.jpg"); width: 60px; height: 60px; }
-}
 
 #email-link {
   color: orange;
@@ -555,5 +513,23 @@ footer {
   border-radius: 50px 0 0 0; 
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+
+.mensaje-no-resultados {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #9eb9df;
+  font-weight: bold;
+  background-color: transparent;
+  margin: 20px auto;
+}
+
+
+.estudiantes ul {
+  min-height: 500px;
+}
+
+
+
+
 
 

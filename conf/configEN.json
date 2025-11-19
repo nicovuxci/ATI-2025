@@ -14,5 +14,7 @@
 	"fecha_nacimiento": "Date of birth",
 	"correo":"please send me a email to [email], if you need to contact me",
 	"buscar": "Search",
-	"saludo": "Hi"
+	"mensaje_no_resultados": "No students found with name: ",
+	"perfil_no_encontrado": "Profile not available. Missing information in the link.",
+	"saludo": "Hello"
 }
