@@ -187,14 +187,14 @@ nav input[type="submit"] {
 
 .contenedor {
   max-width: 900px;
-  margin: 30px auto;
-  background-color: white;
-  
-  
+  margin: 10px auto;
+  padding: 0 5px;
+  box-sizing: border-box;
 }
 
+
 section.estudiantes {
-  padding: 20px;
+  padding: 10px;
   border-top: 2px solid white;
   border-bottom: 2px solid white;
 }
@@ -202,9 +202,9 @@ section.estudiantes {
 .estudiantes ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 15px;
   list-style: none;
-  padding: 20px;
+  padding: 10px;
   margin: 0;
 }
 
@@ -279,50 +279,39 @@ footer {
   background-size: cover;
   background-position: center;
   display: block;
-  /* background-image: url("../30444890/30444890Grande.jpg"); */
 }
 
 
 
 @media (max-width: 480px) {
-
-#foto-perfil {
-    /* background-image: url("../30444890/30444890Pequena.jpg"); */
-    width: 150px;
-    height: 180px;
-    margin: 10px auto;
-  }
-
-  body {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-
-  .pictureBox {
+  nav ul {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav li {
+    border-right: none;
     width: 100%;
   }
 
-  .perfil {
+  nav form {
     width: 100%;
-    padding: 10px;
-  }
-  
-
-  .estudiantes ul {
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
   }
 
-  
+  nav input[type="text"],
+  nav input[type="submit"] {
+    width: 100%;
+  }
 }
+
 
 /* tablet */
 
 @media (min-width: 481px) and (max-width: 768px) {
 
    #foto-perfil {
-    /* background-image: url("../30444890/30444890Pequena.jpg"); */
     width: 220px;
     height: 260px;
     margin: 15px auto;
@@ -356,7 +345,6 @@ footer {
 
 
 #foto-perfil {
-    /* background-image: url("../30444890/30444890Grande.jpg"); */
     width: 320px;
     height: 400px;
     margin: 20px auto;
@@ -381,7 +369,6 @@ footer {
   .estudiantes ul {
     grid-template-columns: repeat(4, 1fr);
   }
-
   
 }
 
@@ -390,7 +377,6 @@ footer {
 @media (min-width: 1025px) and (max-width: 1200px) {
 
 #foto-perfil {
-    /* background-image: url("../30444890/30444890Grande.jpg"); */
     width: 400px;
     height: 480px;
     margin: 20px auto;
@@ -413,7 +399,6 @@ footer {
   .estudiantes ul {
     grid-template-columns: repeat(4, 1fr);
   }
-
   
 }
 
@@ -421,10 +406,8 @@ footer {
 .foto-nicole {
   width: 100px;
   height: 100px;
-  /* background-image: url("../30444890/30444890Grande.jpg"); */
   background-size: cover;
   background-position: center;
-
   margin-bottom: 10px;
   margin-right: 10px;
 }
@@ -432,7 +415,6 @@ footer {
 
 @media (max-width: 480px) {
   .foto-nicole {
-    /* background-image: url("../30444890/30444890Pequena.jpg"); */
     width: 60px;
     height: 60px;
   }
@@ -441,7 +423,6 @@ footer {
 
 @media (min-width: 481px) and (max-width: 768px) {
   .foto-nicole {
-    /* background-image: url("../30444890/30444890Pequena.jpg"); */
     width: 80px;
     height: 80px;
   }
@@ -450,7 +431,6 @@ footer {
 
 @media (min-width: 769px) {
   .foto-nicole {
-    /* background-image: url("../30444890/30444890Grande.jpg"); */
     width: 100px;
     height: 100px;
   }
@@ -530,6 +510,10 @@ footer {
 
 
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
 
 
 
