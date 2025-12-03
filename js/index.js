@@ -42,13 +42,12 @@ window.onload = function () {
       );
 
       if (resultados.length === 0) {
- lista.innerHTML = "";
-const mensaje = document.createElement("h2");
-mensaje.className = "mensaje-no-resultados";
-mensaje.textContent = `${config.mensaje_no_resultados}${filtro}`;
-lista.appendChild(mensaje);
-
-} else {
+        lista.innerHTML = "";
+        const mensaje = document.createElement("h2");
+        mensaje.className = "mensaje-no-resultados";
+        mensaje.textContent = `${config.mensaje_no_resultados}${filtro}`;
+        lista.appendChild(mensaje);
+      } else {
         resultados.forEach(perfil => {
           const li = document.createElement("li");
 
@@ -77,6 +76,31 @@ lista.appendChild(mensaje);
       const filtro = buscador.value.trim();
       mostrarEstudiantes(filtro);
     });
+
+    function mostrarThisNormal() {
+      "use strict";
+      debugger;
+      console.log("Función normal:", this);
+    }
+    mostrarThisNormal();
+
+    const estudiante = {
+      nombre: "Nicole",
+      mostrarNombre: function () {
+        debugger;
+        console.log("Método de objeto:", this.nombre);
+      }
+    };
+    estudiante.mostrarNombre();
+
+    const estudianteFlecha = {
+      nombre: "Nicole",
+      mostrarNombre: () => {
+        debugger;
+        console.log("Arrow function:", this.nombre);
+      }
+    };
+    estudianteFlecha.mostrarNombre();
   };
 
   document.body.appendChild(configScript);

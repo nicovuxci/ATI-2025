@@ -95,12 +95,10 @@
         .info td {
             font-family: 'Georgia', serif;
         }
+.perfil .ultimo-parrafo {
+  font-family: 'Georgia', serif;
+}
 
-        .perfil p:last-of-type {
-            
-            font-family: 'Georgia', serif;
-
-      }
 
 
         /*perfil arriba*/
@@ -471,10 +469,11 @@ footer {
   text-align: center;
 }
 
-.estudiantes li a span {
+.estudiantes span {
   margin-top: 10px;
   display: block;
 }
+
 
 #foto-perfil {
   width: 400px;
