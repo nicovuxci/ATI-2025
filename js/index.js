@@ -19,7 +19,7 @@ window.onload = function () {
       botonBuscar.value = config.buscar;
     }
 
-    const saludo = document.querySelector("li:nth-child(2)");
+    const saludo = document.getElementById("saludo");
     if (saludo) {
       saludo.textContent = `${config.saludo}, Nicole`;
     }
@@ -42,12 +42,13 @@ window.onload = function () {
       );
 
       if (resultados.length === 0) {
-        lista.innerHTML = "";
         const mensaje = document.createElement("h2");
         mensaje.className = "mensaje-no-resultados";
         mensaje.textContent = `${config.mensaje_no_resultados}${filtro}`;
         lista.appendChild(mensaje);
       } else {
+        const fragment = document.createDocumentFragment();
+
         resultados.forEach(perfil => {
           const li = document.createElement("li");
 
@@ -64,8 +65,10 @@ window.onload = function () {
           enlace.appendChild(img);
           enlace.appendChild(nombre);
           li.appendChild(enlace);
-          lista.appendChild(li);
+          fragment.appendChild(li);
         });
+
+        lista.appendChild(fragment);
       }
     }
 
@@ -79,7 +82,6 @@ window.onload = function () {
 
     function mostrarThisNormal() {
       "use strict";
-      debugger;
       console.log("Función normal:", this);
     }
     mostrarThisNormal();
@@ -87,7 +89,6 @@ window.onload = function () {
     const estudiante = {
       nombre: "Nicole",
       mostrarNombre: function () {
-        debugger;
         console.log("Método de objeto:", this.nombre);
       }
     };
@@ -96,7 +97,6 @@ window.onload = function () {
     const estudianteFlecha = {
       nombre: "Nicole",
       mostrarNombre: () => {
-        debugger;
         console.log("Arrow function:", this.nombre);
       }
     };
