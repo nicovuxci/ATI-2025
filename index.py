@@ -55,7 +55,7 @@ def application(environ, start_response):
         <body>
           <div class="pictureBox">
             <div id="foto-perfil">
-              <img src="/ATI/{ci}/{ci}.jpg" alt="{perfil['nombre']}">
+              <img src="/ATI/{ci}/{perfil['imagen']}" alt="{perfil['nombre']}">
             </div>
             <div class="perfil">
               <h1 id="nombre-usuario">{perfil['nombre']}</h1>
