@@ -1,11 +1,21 @@
 window.onload = function () {
-  const params = new URLSearchParams(window.location.search);
-  let language = params.get("lang");
 
-  if (!language) {
-    window.location.search = "?lang=ES";
-    return;
+  function setLangCookie(lang) {
+    document.cookie = `lang=${lang}; path=/; max-age=3600`;
   }
+
+  function getLangCookie() {
+    const cookies = document.cookie.split(";");
+    for (let c of cookies) {
+      const [key, value] = c.trim().split("=");
+      if (key === "lang") return value;
+    }
+    return null;
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  let language = params.get("lang") || getLangCookie() || "ES";
+  setLangCookie(language);
 
   const configScript = document.createElement("script");
   configScript.src = `conf/config${language}.json`;
@@ -18,90 +28,53 @@ window.onload = function () {
       buscador.placeholder = config.nombre;
       botonBuscar.value = config.buscar;
     }
-
     const saludo = document.getElementById("saludo");
-    if (saludo) {
-      saludo.textContent = `${config.saludo}, Nicole`;
-    }
+    if (saludo) saludo.textContent = `${config.saludo}, Nicole`;
 
     const tituloAti = document.getElementById("titulo-ati");
     if (tituloAti && config.sitio) {
       tituloAti.innerHTML = `${config.sitio[0]}<span class="ucv">${config.sitio[1]}</span> ${config.sitio[2]}`;
     }
-
     const footer = document.querySelector("footer");
-    if (footer) {
-      footer.textContent = config.copyRight;
+    if (footer) footer.textContent = config.copyRight;
+
+    if (botonBuscar) {
+      botonBuscar.addEventListener("click", function (e) {
+        e.preventDefault();
+        const filtro = buscador.value.trim();
+
+        fetch(`/ATI/index.py?nombre=${encodeURIComponent(filtro)}`)
+          .then(res => res.text())
+          .then(html => {
+            document.body.innerHTML = html;
+            recargarScript();
+          })
+          .catch(err => console.error("Error en búsqueda:", err));
+      });
     }
 
-    function mostrarEstudiantes(filtro) {
-      lista.innerHTML = "";
+    if (lista) {
+      lista.addEventListener("click", (e) => {
+        e.preventDefault();
+        const link = e.target.closest("a");
+        if (!link) return;
 
-      const resultados = perfiles.filter(perfil =>
-        perfil.nombre.toLowerCase().includes(filtro.toLowerCase())
-      );
-
-      if (resultados.length === 0) {
-        const mensaje = document.createElement("h2");
-        mensaje.className = "mensaje-no-resultados";
-        mensaje.textContent = `${config.mensaje_no_resultados}${filtro}`;
-        lista.appendChild(mensaje);
-      } else {
-        const fragment = document.createDocumentFragment();
-
-        resultados.forEach(perfil => {
-          const li = document.createElement("li");
-
-          const enlace = document.createElement("a");
-          enlace.href = `perfil.html?ci=${perfil.ci}&lang=${language}`;
-
-          const img = document.createElement("img");
-          img.src = perfil.imagen;
-          img.alt = perfil.nombre;
-
-          const nombre = document.createElement("span");
-          nombre.textContent = perfil.nombre;
-
-          enlace.appendChild(img);
-          enlace.appendChild(nombre);
-          li.appendChild(enlace);
-          fragment.appendChild(li);
-        });
-
-        lista.appendChild(fragment);
-      }
+        fetch(link.href.replace("perfil.html", "index.py"))
+          .then(res => res.text())
+          .then(html => {
+            document.body.innerHTML = html;
+            recargarScript();
+          })
+          .catch(err => console.error("Error cargando perfil:", err));
+      });
     }
-
-    mostrarEstudiantes("");
-
-    botonBuscar.addEventListener("click", function (e) {
-      e.preventDefault();
-      const filtro = buscador.value.trim();
-      mostrarEstudiantes(filtro);
-    });
-
-    function mostrarThisNormal() {
-      "use strict";
-      console.log("Función normal:", this);
-    }
-    mostrarThisNormal();
-
-    const estudiante = {
-      nombre: "Nicole",
-      mostrarNombre: function () {
-        console.log("Método de objeto:", this.nombre);
-      }
-    };
-    estudiante.mostrarNombre();
-
-    const estudianteFlecha = {
-      nombre: "Nicole",
-      mostrarNombre: () => {
-        console.log("Arrow function:", this.nombre);
-      }
-    };
-    estudianteFlecha.mostrarNombre();
   };
 
   document.body.appendChild(configScript);
+
+  function recargarScript() {
+    const script = document.createElement("script");
+    script.src = "/ATI/js/index.js";
+    document.body.appendChild(script);
+  }
 };

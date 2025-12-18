@@ -1,4 +1,4 @@
- const config = {
+{
 	"sitio": ["ITA","[UCV]","2025-2"],
 	"home": "Home",
 	"login": "Login",

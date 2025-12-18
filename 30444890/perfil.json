@@ -1,4 +1,4 @@
-const perfil = {
+{
   "nombre": "Nicole Llerena",
   "descripcion": "Soy estudiante de Computación en la UCV. Completé un curso de inglés certificado. En mi tiempo libre me gusta dibujar y leer novelas o libros.",
   "color": "Morado, en todos sus tonos",
